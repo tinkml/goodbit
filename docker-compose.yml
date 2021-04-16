@@ -1,0 +1,14 @@
+version: "3.5"
+
+
+services:
+  core:
+    build: .
+    container_name: promo_code
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - promocode_generator/.env
+    volumes:
+      - ./promocode_generator:/app/
+    ports:
+      - 8000:8000
