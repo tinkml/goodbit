@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from config.yasg import urlpatterns as doc_urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -8,3 +10,5 @@ urlpatterns = [
 
     path('api/v1/', include('promo_code.urls')),
 ]
+
+urlpatterns += doc_urls
